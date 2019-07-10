@@ -12,4 +12,10 @@ public class IndexController
         System.out.println("Showing index page");
         return "index";
     }
+
+    @RequestMapping("/oups")
+    public String error()
+    {
+        return "notimplemented";
+    }
 }
