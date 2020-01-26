@@ -47,7 +47,7 @@ class OwnerJpaServiceTest
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
         Owner smith = ownerJpaService.findByLastName(LAST_NAME);
         assertEquals(LAST_NAME, smith.getLastName());
-        verify(ownerRepository).findByLastName(any());
+        verify(ownerRepository, times(1)).findByLastName(any());
     }
 
     @Test
