@@ -25,7 +25,7 @@ public class VetJpaService implements VetService
     {
         Set<Vet> vets = new HashSet<>();
         this.vetRepository.findAll().forEach(vets::add);
-        return null;
+        return vets;
     }
 
     @Override

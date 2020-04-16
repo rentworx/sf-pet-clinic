@@ -86,17 +86,18 @@ public class DataLoader implements CommandLineRunner
         Specialty savedRadiology = specialtyService.save(radiology);
 
         Specialty surgery = new Specialty();
-        radiology.setDescription("Surgery");
+        surgery.setDescription("Surgery");
         Specialty savedSurgery = specialtyService.save(surgery);
 
-        Specialty dentisty = new Specialty();
-        radiology.setDescription("Dentistry");
-        Specialty savedDentistry = specialtyService.save(dentisty);
+        Specialty dentistry = new Specialty();
+        dentistry.setDescription("Dentistry");
+        Specialty savedDentistry = specialtyService.save(dentistry);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
         vet1.getSpecialties().add(savedRadiology);
+        vet1.getSpecialties().add(savedDentistry);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
